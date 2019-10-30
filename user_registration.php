@@ -212,9 +212,9 @@
   </head>
   <body>
     <div class="testbox">
-	    <!-- ************** ON SUBMIT EVENT LISTENER IN <form> TO HIT A FILE ************** 
-            <form action="helloworld.php" method="post">
-               -->
+	    <!-- ************** ON SUBMIT EVENT LISTENER IN <form> TO HIT A FILE ************** -->
+            <form action="insert_user.php" method="post">
+       
     <form name="userinfo" onsubmit="alert('The form is submitted')" action="">
       <br/>
       <fieldset>
