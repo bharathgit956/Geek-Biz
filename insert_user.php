@@ -42,7 +42,7 @@ if(!$conn) {
 	 </script>";
 }
 
-if ($atype == 'Tutor') {
+if ($atype == 'tutor') {
 	$tsql1= "INSERT INTO [dbo].[Tutors] (aid,fname,lname,email,
 											phone,dob,gender,wage,edlevel,zipcode,
 											address1,address2,password)
@@ -56,7 +56,7 @@ if ($atype == 'Tutor') {
 		die(print_r(sqlsrv_errors(), true));
 	} else {
 		echo "<script>
-	  alert('User ".$fullname." added.');
+	  alert('Tutor ".$fullname." added.');
 	  </script>";
 	}
 
@@ -75,7 +75,7 @@ echo "<script>
 	die(print_r(sqlsrv_errors(), true));
 } else {
 	echo "<script>
-  alert('User ".$fullname." added.');
+  alert('Student ".$fname." added.');
   </script>";
 }
 }
