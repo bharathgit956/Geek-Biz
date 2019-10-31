@@ -36,16 +36,15 @@ $connectionInfo = array("UID" => "bkk48", "pwd" => "Cse541project", "Database" =
 $serverName = "tcp:studentsandtutors.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-if( !$conn) {
+if(!$conn) {
 	echo "<script>
 	 alert('Connection failed');
 	 </script>";
 }
 
-$ $tsql1= "INSERT INTO [dbo].[Students](aid,fname,lname,email,phone,dob,gender,wage,edlevel,zipcode,address1,address2,password)
-VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-vals = array('$aid','$fname','$lname','$email','$phone','$dob','$gender','$wage','$edlevel','$zipcode','$address1','$address2','$password')
-$insertReview = sqlsrv_query($conn, $tsql1,vals);
+$ $tsql1= "INSERT INTO [dbo].[Students](aid,fname,lname,email,phone,dob,gender,wage,edlevel,zipcode,address1,address2,password) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+$vals = array($aid,$fname,$lname,$email,$phone,$dob,$gender,$wage,$edlevel,$zipcode,$address1,$address2,$password)
+$insertReview = sqlsrv_query($conn, $tsql1,$vals);
 if(!$insertReview){
 echo "<script>
 	alert('Some error occured');
