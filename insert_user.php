@@ -36,7 +36,7 @@ $connectionInfo = array("UID" => "bkk48", "pwd" => "Cse541project", "Database" =
 $serverName = "tcp:studentsandtutors.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-if( $conn === false ) {
+if( !$conn) {
 	echo "<script>
 	 alert('Connection failed');
 	 </script>";
