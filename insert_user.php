@@ -30,21 +30,21 @@ $address1 = $_POST['address1'];
 $address2 = $_POST['address2'];
 $password = $_POST['password'];
 
-// echo $city . "--" . $country . "--" . $aid . "--" . $atype . "--" . $fname . "--" . $lname . "--" . $email . "--" . $phone . "--" . $dob . "--" . $gender . "--" . 
-//      $wage . "--" . $edlevel . "--" . $zipcode . "--" . $address1 . "--" . $address2 . "--" . $password; 
+// echo $city . "--" . $country . "--" . $aid . "--" . $atype . "--" . $fname . "--" . $lname . "--" . $email . "--" . $phone . "--" . $dob . "--" . $gender . "--" .
+//      $wage . "--" . $edlevel . "--" . $zipcode . "--" . $address1 . "--" . $address2 . "--" . $password;
 $connectionInfo = array("UID" => "bkk48", "pwd" => "Cse541project", "Database" => "tutorsandstudents-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:studentsandtutors.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 
-$tsql1= "insert into Accounts values('".$aid."','".$atype."','".$fname."',".$lname.",'".$email."','".$phone."','".$dob."',".$gender.",".$wage.",".$edlevel.", ".$zipcode.",".$address1.",
-                                          ".$address2.",,".$password.")";
+$ $tsql1= "INSERT INTO [dbo].[Students] (aid,fname,lname,email,phone,dob,gender,wage,edlevel,zipcode,address1,address2,password)
+VALUES('$aid','$fname','$lname','$email','$phone','$dob','$gender','$wage','$edlevel','$zipcode','$address1','$address2','$password')";
 $insertReview = sqlsrv_query($conn, $tsql1);
 if(!$insertReview){
 echo "<script>
 	alert('Some error occured');
 	</script>";
-  } 
+  }
   echo "<script>
   alert('User ".$fullname." added.');
   </script>";
