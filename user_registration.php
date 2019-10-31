@@ -212,10 +212,10 @@
   </head>
   <body>
     <div class="testbox">
-	    <!-- ************** ON SUBMIT EVENT LISTENER IN <form> TO HIT A FILE ************** 
-            <form action="helloworld.php" method="post">
-               -->
-    <form name="userinfo" onsubmit="alert('The form is submitted')" action="">
+	    <!-- ************** ON SUBMIT EVENT LISTENER IN <form> TO HIT A FILE ************** -->
+            <form action="insert_user.php" method="post">
+               
+    <!-- <form name="userinfo" onsubmit="alert('The form is submitted')" action=""> -->
       <br/>
       <fieldset>
         <legend>Registration Form</legend>
@@ -241,35 +241,35 @@
             <input id="password" type="password"   name="password" required />
           </div>
           <div class="item">
-            <label for="type"> Account Type<span>*</span></label>
+            <label for="atype"> Account Type<span>*</span></label>
             <br/>
-            <select style="width: 100% !important" required>
+            <select name="atype" style="width: 100% !important" required>
             	<option selected disabled value="">Select One</option>
             	<option value="tutor">Tutor</option>
             	<option value="student">Student</option>
             </select>
           </div>
           <div class="item">
-            <label for="dobname">Date of Birth<span>*</span></label>
+            <label for="dob">Date of Birth<span>*</span></label>
             <input id="dob" type="date" name="dob" required />
           </div>
           <div class="item">
             <label for="gender"> Gender<span>*</span></label>
             <br/>
-            <select style="width: 100% !important" required>
+            <select name="gender"  style="width: 100% !important" required>
             	<option selected disabled value="" >Select One</option>
-            	<option value="male">Female</option>
-            	<option value="female">Male</option>
+            	<option value="female">Female</option>
+            	<option value="male">Male</option>
             </select >
           </div>
           </div>
            <div class="item">
       		<label for="address1">Address 1 <span> * </span></label>
-      		<textarea id="address1" rows="1" required></textarea>
+      		<textarea id="address1" name = "address1" rows="1" required></textarea>
       	   </div>
           <div class="item">
             <label for="address2">Address 2</label>
-      		<textarea id="address2" rows="1"></textarea>
+      		<textarea id="address2" name = "address2" rows="1"></textarea>
           </div>
           <div class="colums">
           <div class="item">
@@ -282,7 +282,7 @@
           </div>
           <div class="item">
             <label for="country">Country <span>*</span></label>
-            <input id="country" type="text"   name="text" required pattern="[A-Za-z\s]{1,30}" title = "Must Contain Alphabets and Space" />
+            <input id="country" type="text"   name="country" required pattern="[A-Za-z\s]{1,30}" title = "Must Contain Alphabets and Space" />
           </div>
           <div class="item">
             <label for="phone">Phone Number <span>*</span></label>
@@ -293,9 +293,9 @@
       		<input id="wage" type="number"  name="wage" required />
           </div>
           <div class="item">
-            <label for="gender"> Education Level <span>*</span></label>
+            <label for="edlevel"> Education Level <span>*</span></label>
             <br/>
-            <select style="width: 100% !important" required>
+            <select name="edlevel" style="width: 100% !important" required>
             	<option selected disabled value="">Select One</option>
                 <option value="highschool"> High School</option>
             	<option value="bachelors"> Bachelors</option>

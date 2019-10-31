@@ -13,19 +13,10 @@
 
 
 <?php
-
-$connectionInfo = array("UID" => "bkk48", "pwd" => "Cse541project", "Database" => "tutorsandstudents-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:studentsandtutors.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-
-
-
 $city = $_POST['city'];
 $country = $_POST['country'];
-
-
 $aid = $_POST['username'];
-$atype = $_POST['type'];
+$atype = $_POST['atype'];
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['eaddress'];
@@ -39,6 +30,11 @@ $address1 = $_POST['address1'];
 $address2 = $_POST['address2'];
 $password = $_POST['password'];
 
+// echo $city . "--" . $country . "--" . $aid . "--" . $atype . "--" . $fname . "--" . $lname . "--" . $email . "--" . $phone . "--" . $dob . "--" . $gender . "--" . 
+//      $wage . "--" . $edlevel . "--" . $zipcode . "--" . $address1 . "--" . $address2 . "--" . $password; 
+$connectionInfo = array("UID" => "bkk48", "pwd" => "Cse541project", "Database" => "tutorsandstudents-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:studentsandtutors.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
 
 
 $tsql1= "insert into Accounts values('".$aid."','".$atype."','".$fname."',".$lname.",'".$email."','".$phone."','".$dob."',".$gender.",".$wage.",".$edlevel.", ".$zipcode.",".$address1.",
@@ -52,7 +48,6 @@ echo "<script>
   echo "<script>
   alert('User ".$fullname." added.');
   </script>";
-  }
 ?>
 </body>
 </html>
