@@ -42,6 +42,26 @@ if(!$conn) {
 	 </script>";
 }
 
+if ($atype == 'Tutor') {
+	$tsql1= "INSERT INTO [dbo].[Tutors] (aid,fname,lname,email,
+											phone,dob,gender,wage,edlevel,zipcode,
+											address1,address2,password)
+											VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	$vals = array($aid,$fname,$lname,$email,$phone,$dob,$gender,$wage,$edlevel,$zipcode,$address1,$address2,$password);
+	$insertReview = sqlsrv_query($conn, $tsql1,$vals);
+	if(!$insertReview){
+	echo "<script>
+		alert('Some error occured');
+		</script>";
+		die(print_r(sqlsrv_errors(), true));
+	} else {
+		echo "<script>
+	  alert('User ".$fullname." added.');
+	  </script>";
+	}
+
+} else {
+
 $tsql1= "INSERT INTO [dbo].[Students] (aid,fname,lname,email,
 										phone,dob,gender,wage,edlevel,zipcode,
 										address1,address2,password)
@@ -57,6 +77,7 @@ echo "<script>
 	echo "<script>
   alert('User ".$fullname." added.');
   </script>";
+}
 }
 ?>
 </body>
