@@ -52,9 +52,9 @@ WHERE A1.zipcode= ".$zipcode." AND A2.city=A1.city AND A2.stateName=A1.stateName
 	}
 	while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 		echo "<tr>".
-				"<th  scope='row'>".$row['phone']."</th>".
 				"<td>".$row['fname']."</td>".
 				"<td>".$row['lname']."</td>".
+				"<td>".$row['edlevel']."</td>".
 				"<td>".$row['wage']."</td>".
 				"<td>".$row['city']."</td>".
 			"</tr>";
