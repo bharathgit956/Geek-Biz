@@ -214,13 +214,10 @@
     <div class="testbox">
 	    <!-- ************** ON SUBMIT EVENT LISTENER IN <form> TO HIT A FILE ************** -->
             <form action="insert_user.php" method="post">
-<<<<<<< HEAD
                
     <!-- <form name="userinfo" onsubmit="alert('The form is submitted')" action=""> -->
-=======
        
     <form name="userinfo" onsubmit="alert('The form is submitted')" action="">
->>>>>>> bc5e9435103d235e176f1d85c58a5e69f5edef95
       <br/>
       <fieldset>
         <legend>Registration Form</legend>
