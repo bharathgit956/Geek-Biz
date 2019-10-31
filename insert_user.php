@@ -36,18 +36,23 @@ $connectionInfo = array("UID" => "bkk48", "pwd" => "Cse541project", "Database" =
 $serverName = "tcp:studentsandtutors.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
+if( $conn === false ) {
+     die( print_r( sqlsrv_errors(), true));
+}
 
-$ $tsql1= "INSERT INTO [dbo].[Students] (aid,fname,lname,email,phone,dob,gender,wage,edlevel,zipcode,address1,address2,password)
-VALUES('$aid','$fname','$lname','$email','$phone','$dob','$gender','$wage','$edlevel','$zipcode','$address1','$address2','$password')";
-$insertReview = sqlsrv_query($conn, $tsql1);
+$ $tsql1= "INSERT INTO dbo.Students (aid,fname,lname,email,phone,dob,gender,wage,edlevel,zipcode,address1,address2,password)
+VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+variables = array('$aid','$fname','$lname','$email','$phone','$dob','$gender','$wage','$edlevel','$zipcode','$address1','$address2','$password')
+$insertReview = sqlsrv_query($conn, $tsql1,variables);
 if(!$insertReview){
 echo "<script>
 	alert('Some error occured');
 	</script>";
-  }
-  echo "<script>
+} else {
+	echo "<script>
   alert('User ".$fullname." added.');
   </script>";
+}
 ?>
 </body>
 </html>
