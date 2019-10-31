@@ -8,7 +8,7 @@
       html, body {
       min-height: 100%;
       }
-      body, div, form, input, select, textarea, label { 
+      body, div, form, input, select, textarea, label {
       padding: 0;
       margin: 0;
       outline: none;
@@ -27,7 +27,7 @@
       top:30px;
       }
       legend {
-      padding: 10px;      
+      padding: 10px;
       font-family: Roboto, Arial, sans-serif;
       font-size: 18px;
       color: #fff;
@@ -41,7 +41,7 @@
      select:focus {
         min-width: 150px;
         width: auto;
-     } 
+     }
       textarea {
       width: calc(100% - 12px);
       padding: 5px;
@@ -58,12 +58,12 @@
       padding: 20px;
       border-radius: 6px;
       background: #fff;
-      box-shadow: 0 0 8px #006622; 
+      box-shadow: 0 0 8px #006622;
       }
       .banner {
       position: relative;
       height: 250px;
-      background-image: url("/uploads/media/default/0001/02/cc6bc584f236c7234947015b89151ab6d04c4cbf.jpeg");  
+      background-image: url("/uploads/media/default/0001/02/cc6bc584f236c7234947015b89151ab6d04c4cbf.jpeg");
       background-size: cover;
       display: flex;
       justify-content: center;
@@ -72,7 +72,7 @@
       }
       .banner::after {
       content: "";
-      background-color: rgba(0, 0, 0, 0.4); 
+      background-color: rgba(0, 0, 0, 0.4);
       position: absolute;
       width: 100%;
       height: 100%;
@@ -183,7 +183,7 @@
       width: 150px;
       padding: 10px;
       border: none;
-      border-radius: 5px; 
+      border-radius: 5px;
       background:  #1c87c9;
       font-size: 16px;
       color: #fff;
@@ -213,8 +213,8 @@
   <body>
     <div class="testbox">
 	    <!-- ************** ON SUBMIT EVENT LISTENER IN <form> TO HIT A FILE ************** -->
-            <!-- <form action="insert_user.php" method="post">
-               
+      <form action="get_tutors.php" method="post">
+
     <!-- <form name="userinfo" onsubmit="alert('The form is submitted')" action=""> -->
     <form>
       <br/>
@@ -228,7 +228,7 @@
       </div>
       </fieldset>
       <br/>
-      
+
     </form>
     </div>
   </body>
