@@ -30,7 +30,7 @@ $address1 = $_POST['address1'];
 $address2 = $_POST['address2'];
 $password = $_POST['password'];
 
-// echo $city . "--" . $country . "--" . $aid . "--" . $atype . "--" . $fname . "--" . $lname . "--" . $email . "--" . $phone . "--" . $dob . "--" . $gender . "--" .
+//echo $city . "--" . $country . "--" . $aid . "--" . $atype . "--" . $fname . "--" . $lname . "--" . $email . "--" . $phone . "--" . $dob . "--" . $gender . "--" .
 //      $wage . "--" . $edlevel . "--" . $zipcode . "--" . $address1 . "--" . $address2 . "--" . $password;
 $connectionInfo = array("UID" => "bkk48", "pwd" => "Cse541project", "Database" => "tutorsandstudents-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:studentsandtutors.database.windows.net,1433";
@@ -43,7 +43,7 @@ if(!$conn) {
 }
 
 $ $tsql1= "INSERT INTO [dbo].[Students](aid,fname,lname,email,phone,dob,gender,wage,edlevel,zipcode,address1,address2,password) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-$vals = array($aid,$fname,$lname,$email,$phone,$dob,$gender,$wage,$edlevel,$zipcode,$address1,$address2,$password)
+$vals = array($aid,$fname,$lname,$email,$phone,$dob,$gender,$wage,$edlevel,$zipcode,$address1,$address2,$password);
 $insertReview = sqlsrv_query($conn, $tsql1,$vals);
 if(!$insertReview){
 echo "<script>
