@@ -19,7 +19,7 @@ $zipcode = $_POST['zip'];
 //echo $city . "--" . $country . "--" . $aid . "--" . $atype . "--" . $fname . "--" . $lname . "--" . $email . "--" . $phone . "--" . $dob . "--" . $gender . "--" .
 //      $wage . "--" . $edlevel . "--" . $zipcode . "--" . $address1 . "--" . $address2 . "--" . $password;
 $connectionInfo = array("UID" => "bkk48", "pwd" => "Cse541project", "Database" => "tutorsandstudents-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:studentsandtutors.database.windows.net,1433";
+$serverName = "tcp:geekbiz.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 if(!$conn) {
