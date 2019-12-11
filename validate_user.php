@@ -27,10 +27,10 @@ function message_and_code($message, $code){
 switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
-      echo $_GET["username"];
+      //echo $_GET["username"];
       $tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET["username"]."";
       $getResults= mysqli_query($conn, $tsql1);
-
+      echo $getResults;
         $result['user'] = array();
       while($row = mysqli_fetch_array($getResults)){
         $result['numberOfEntries'] += 1;
