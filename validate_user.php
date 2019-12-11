@@ -10,8 +10,49 @@ if(!$conn) {
 	echo "<script>
 	 alert('Connection failed');
 	 </script>";
-} else {
-  echo "<script>
-     alert ('Connection passed');
-     </script>";
 }
+
+$method = $_SERVER['REQUEST_METHOD'];
+$input = json_decode(file_get_contents('php://input'),true);
+$result = array();
+function message_and_code($message, $code){
+    $temp = array();
+    $temp["message"] = $message;
+    http_response_code($code);
+    echo json_encode($temp);
+}
+switch ($method) {
+    case 'GET':
+    	$result['numberOfEntries'] = 0;
+        $tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET['username'].""
+    	$getResults= mysqli_query($conn, $tsql1);
+
+        $result['user'] = array();
+    	while($row = mysqli_fetch_array($getResults)){
+    		$result['numberOfEntries'] += 1;
+    		$aid = $row['aid'];
+    		if($aid==null){
+    			$aid = "";
+    		}
+			$password = $row['password'];
+    		if($password==null){
+    			$password = "";
+    		}
+            $temp = array(
+                "aid" =>$fullname,
+                "password" =>$password
+            );
+            array_push($result["user"], $temp);
+    	}
+
+        if($result['numberOfEntries']==0){
+            message_and_code("Some error occured",200);
+        }
+        else{
+            http_response_code(200);
+            echo json_encode($result);
+        }
+        //   curl http://purohitji.azurewebsites.net/pandit.php?city=Bangalore&lang=hindi
+        break;
+  }
+  mysqli_close($conn);
