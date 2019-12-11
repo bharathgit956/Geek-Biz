@@ -31,7 +31,12 @@ switch ($method) {
       $tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET["username"]."";
       echo $tsql1;
       $getResults= mysqli_query($conn, $tsql1);
-      echo $getResults;
+      if(!$getResults){
+    	echo "<script>
+    		alert('Some error occured');
+    		</script>";
+    		die(print_r(sqlsrv_errors(), true));
+    	}
         $result['user'] = array();
       while($row = mysqli_fetch_array($getResults)){
         $result['numberOfEntries'] += 1;
