@@ -16,7 +16,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents('php://input'),true);
 $result = array();
 
-//echo $method
+
 function message_and_code($message, $code){
     $temp = array();
     $temp["message"] = $message;
@@ -27,9 +27,6 @@ function message_and_code($message, $code){
 switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
-      echo "<script>
-      alert('inside get');
-      </script>";
-        //$tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET['username']."";
-        //echo $tsql1;
+      echo $_GET['username']
+      #$tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET['username']."";
   }
