@@ -5,7 +5,7 @@ $connectionInfo = array("UID" => "bkk48", "pwd" => "Cse541project", "Database" =
 $serverName = "tcp:geekbiz.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
+//$conn = mysqli_connect($servername, $username, $password, $database);
 $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents('php://input'),true);
 $result = array();
