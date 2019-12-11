@@ -10,4 +10,8 @@ if(!$conn) {
 	echo "<script>
 	 alert('Connection failed');
 	 </script>";
+} else {
+  echo "<script>
+     alert ('Connection passed');
+     </script>";
 }
