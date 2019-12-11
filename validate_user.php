@@ -29,40 +29,15 @@ switch ($method) {
     	$result['numberOfEntries'] = 0;
       //echo $_GET["username"];
       #$tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET["username"]."";
-      $tsql1 = "SELECT TOP (10) * FROM [dbo].[Students]"
+      $tsql1 = "SELECT TOP (10) * FROM [dbo].[Students]";
       echo $tsql1;
       $getResults= mysqli_query($conn, $tsql1);
+      echo $getResults;
       if(!$getResults){
     	echo "<script>
     		alert('Some error occured');
     		</script>";
     		die(print_r(sqlsrv_errors(), true));
     	}
-        $result['user'] = array();
-      while($row = mysqli_fetch_array($getResults)){
-        $result['numberOfEntries'] += 1;
-        $aid = $row['aid'];
-        if($aid==null){
-          $aid = "";
-        }
-      $password = $row['password'];
-        if($password==null){
-          $password = "";
-        }
-            $temp = array(
-                "aid" =>$fullname,
-                "password" =>$password
-            );
-            array_push($result["user"], $temp);
-      }
-
-        if($result['numberOfEntries']==0){
-            message_and_code("Some error occured",200);
-        }
-        else{
-            http_response_code(200);
-            echo json_encode($result);
-        }
-        break;
-        mysqli_close($conn);
+      break;
   }
