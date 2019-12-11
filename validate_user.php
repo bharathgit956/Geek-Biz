@@ -30,7 +30,7 @@ switch ($method) {
       //echo $_GET["username"];
       $tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET["username"]."";
       //$tsql1 = "SELECT TOP (10) * FROM [dbo].[Tutors]";
-      echo $tsql1;
+      //echo $tsql1;
       $getResults= sqlsrv_query($conn, $tsql1);
       if(!$getResults){
     	echo "<script>
@@ -41,6 +41,7 @@ switch ($method) {
         $result['user'] = array();
       while($row = sqlsrv_fetch_array($getResults)){
         $result['numberOfEntries'] += 1;
+        echo print_r($row);
         $aid = $row['aid'];
         if($aid==null){
           $aid = "";
