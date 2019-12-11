@@ -28,7 +28,8 @@ switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
       //echo $_GET["username"];
-      $tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET["username"]."";
+      #$tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET["username"]."";
+      $tsql1 = "SELECT TOP (10) * FROM [dbo].[Students]"
       echo $tsql1;
       $getResults= mysqli_query($conn, $tsql1);
       if(!$getResults){
