@@ -16,7 +16,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents('php://input'),true);
 $result = array();
 
-//echo $method
+echo $method
 function message_and_code($message, $code){
     $temp = array();
     $temp["message"] = $message;
@@ -28,8 +28,5 @@ switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
         $tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET['username']."";
-    	$getResults= mysqli_query($conn, $tsql1);
-      echo $getResults;
-        break;
-        mysqli_close($conn);
+        echo $tsql1;
   }
