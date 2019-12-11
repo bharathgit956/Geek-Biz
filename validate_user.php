@@ -15,3 +15,11 @@ if(!$conn) {
 $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents('php://input'),true);
 $result = array();
+
+echo $method
+function message_and_code($message, $code){
+    $temp = array();
+    $temp["message"] = $message;
+    http_response_code($code);
+    echo json_encode($temp);
+}
