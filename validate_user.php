@@ -6,6 +6,12 @@ $serverName = "tcp:geekbiz.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 // Create connection
 //$conn = mysqli_connect($servername, $username, $password, $database);
+if(!$conn) {
+	echo "<script>
+	 alert('Connection failed');
+	 </script>";
+}
+
 $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents('php://input'),true);
 $result = array();
