@@ -27,6 +27,9 @@ function message_and_code($message, $code){
 switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
+      echo "<script>
+      alert('inside get');
+      </script>";
         //$tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET['username']."";
         //echo $tsql1;
   }
