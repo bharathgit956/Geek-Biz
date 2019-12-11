@@ -39,7 +39,7 @@ switch ($method) {
     		die(print_r(sqlsrv_errors(), true));
     	}
         $result['user'] = array();
-      while($row = mysqli_fetch_array($getResults)){
+      while($row = sqlsrv_fetch_array($getResults)){
         $result['numberOfEntries'] += 1;
         $aid = $row['aid'];
         if($aid==null){
