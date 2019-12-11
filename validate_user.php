@@ -41,7 +41,6 @@ switch ($method) {
         $result['user'] = array();
       while($row = sqlsrv_fetch_array($getResults)){
         $result['numberOfEntries'] += 1;
-        echo print_r($row);
         $aid = $row['aid'];
         if($aid==null){
           $aid = "";
@@ -51,7 +50,7 @@ switch ($method) {
           $password = "";
         }
             $temp = array(
-                "aid" =>$fullname,
+                "aid" =>$aid,
                 "password" =>$password
             );
             array_push($result["user"], $temp);
