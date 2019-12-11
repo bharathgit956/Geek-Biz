@@ -29,6 +29,7 @@ switch ($method) {
     	$result['numberOfEntries'] = 0;
       //echo $_GET["username"];
       $tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET["username"]."";
+      echo $tsql1;
       $getResults= mysqli_query($conn, $tsql1);
       echo $getResults;
         $result['user'] = array();
