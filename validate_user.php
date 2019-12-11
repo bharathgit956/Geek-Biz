@@ -27,6 +27,6 @@ function message_and_code($message, $code){
 switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
-      echo $_GET['username']
+      echo $_GET;
       #$tsql1 = "SELECT aid,password FROM [dbo].[Students] WHERE aid=".$_GET['username']."";
   }
