@@ -21,7 +21,16 @@ $gender1 = "'male'";
 $gender2 = "'female'";
 $wage = "1000";
 try {
-  $rating = $_GET["rating"];
+  $gender1 = $_GET["gender1"];
+} catch (Error $e) { // this will catch only Errors
+}
+
+try {
+  $gender2 = $_GET["gender2"];
+} catch (Error $e) { // this will catch only Errors
+}
+try {
+  $wage= $_GET["wage"];
 } catch (Error $e) { // this will catch only Errors
 }
 
