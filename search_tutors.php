@@ -64,7 +64,7 @@ AND (Tsub.aid = T.aid AND Tsub.subid >= 0 AND Tsub.subid <= 500)
 AND T.wage <= ".$wage." AND (T.gender=".$gender1." OR T.gender=".$gender2.")";
 
       //$tsql1 = "SELECT TOP (10) * FROM [dbo].[Tutors]";
-      echo $tsql1;
+      //echo $tsql1;
       $getResults= sqlsrv_query($conn, $tsql1);
       if(!$getResults){
     	echo "<script>
