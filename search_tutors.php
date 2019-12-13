@@ -59,14 +59,9 @@ AND
 
 AND
 
-T.wage <= ".$wage."
-
-AND
-
+T.wage <= ".$wage." AND
 (T.gender='female' OR T.gender='male')
-
 AND
-
 R.rating >= ".$rating."";
 
       //$tsql1 = "SELECT TOP (10) * FROM [dbo].[Tutors]";
