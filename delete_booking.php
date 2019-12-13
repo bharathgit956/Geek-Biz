@@ -18,7 +18,6 @@ $result = array();
 
 $tutid = $_GET["tutid"];
 $slotid = $_GET["slotid"];
-$studid = $_GET["studid"];
 
 function message_and_code($message, $code){
     $temp = array();
@@ -32,7 +31,7 @@ switch ($method) {
     	$result['numberOfEntries'] = 0;
       //echo $_GET["username"];
       $tsql1 = "DELETE FROM [dbo][Bookings]
-      WHERE tutid= ".$tutid." AND slotid= ".$studid."";
+      WHERE tutid= ".$tutid." AND slotid= ".$slotid."";
       //$tsql1 = "SELECT TOP (10) * FROM [dbo].[Tutors]";
       //echo $tsql1;
       $getResults= sqlsrv_query($conn, $tsql1);
