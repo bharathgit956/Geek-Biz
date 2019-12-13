@@ -19,7 +19,10 @@ $zipcode = $_GET["zip"];
 $wage = '1000';
 $rating = 0;
 try {
+  print_r($_GET["wage"])
+  if ($_GET["wage"] != null) {
   $wage = $_GET["wage"];
+}
 
 } catch (Error $e) { // this will catch only Errors
 }
