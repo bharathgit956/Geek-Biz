@@ -37,6 +37,10 @@ switch ($method) {
       //echo $tsql1;
       $getResults= sqlsrv_query($conn, $tsql1);
       if(!$getResults){
+        echo "<script>
+      		alert('Some error occured');
+      		</script>";
+      		die(print_r(sqlsrv_errors(), true));
     	  message_and_code("Some error occured",200);
     	}else{
             message_and_code("Booking Confirmed",200);
