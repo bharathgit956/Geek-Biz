@@ -16,7 +16,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents('php://input'),true);
 $result = array();
 $zipcode = $_GET["zip"];
-$wage = 1000;
+$wage = '1000';
 $rating = 0;
 try {
   $wage = $_GET["wage"];
