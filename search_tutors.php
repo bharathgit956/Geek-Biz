@@ -20,7 +20,7 @@ $wage = 1000;
 $rating = 0;
 try {
   $wage = $_GET["wage"];
-  
+
 } catch (Error $e) { // this will catch only Errors
 }
 
@@ -43,7 +43,7 @@ switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
       //echo $_GET["username"];
-      $tsql1= SELECT DISTINCT T.aid, T.fname+' '+ T.lname AS Name, T.edlevel AS Qualification, T.gender AS Gender, T.wage AS Wage, R.rating AS Rating, A.city AS City, T.zipcode AS Zipcode
+      $tsql1= "SELECT DISTINCT T.aid, T.fname+' '+ T.lname AS Name, T.edlevel AS Qualification, T.gender AS Gender, T.wage AS Wage, R.rating AS Rating, A.city AS City, T.zipcode AS Zipcode
 FROM Tutors T, AddressMapping A, TutorSubjects TSub, Ratings R
 WHERE T.zipcode=A.zipcode AND R.aid=T.aid AND
 
@@ -68,6 +68,7 @@ AND
 AND
 
 R.rating >= ".$rating."";
+
       //$tsql1 = "SELECT TOP (10) * FROM [dbo].[Tutors]";
       //echo $tsql1;
       $getResults= sqlsrv_query($conn, $tsql1);
