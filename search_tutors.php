@@ -29,7 +29,7 @@ switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
       //echo $_GET["username"];
-      $tsql1= "SELECT T.fname, T.lname, T.edlevel, T.wage, A.city
+      $tsql1= "SELECT T.aid, T.fname, T.lname, T.edlevel, T.wage, A.city
     FROM [dbo].[Tutors] T, [dbo].[AddressMapping] A
     WHERE T.zipcode=A.zipcode AND T.zipcode IN
     (SELECT A2.zipcode FROM [dbo].[AddressMapping] AS A1, [dbo].[AddressMapping] AS A2
@@ -46,6 +46,12 @@ switch ($method) {
         $result['tutors'] = array();
       while($row = sqlsrv_fetch_array($getResults)){
         $result['numberOfEntries'] += 1;
+
+        $aid = $row['aid'];
+        if($aid==null){
+          $aid = "";
+        }
+
         $fname = $row['fname'];
         if($fname==null){
           $fname = "";
@@ -68,6 +74,7 @@ switch ($method) {
           }
 
             $temp = array(
+                "aid" => $aid,
                 "fname" =>$fname,
                 "lname" =>$lname,
                 "edlevel" =>$edlevel,
