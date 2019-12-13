@@ -16,6 +16,20 @@ $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents('php://input'),true);
 $result = array();
 $zipcode = $_GET["zip"];
+$wage = 1000;
+$rating = 0;
+try {
+  $wage = $_GET["wage"];
+  
+} catch (Error $e) { // this will catch only Errors
+}
+
+try {
+  $rating = $_GET["rating"];
+} catch (Error $e) { // this will catch only Errors
+}
+
+
 
 function message_and_code($message, $code){
     $temp = array();
@@ -29,11 +43,31 @@ switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
       //echo $_GET["username"];
-      $tsql1= "SELECT T.aid, T.fname, T.lname, T.edlevel, T.wage, A.city
-    FROM [dbo].[Tutors] T, [dbo].[AddressMapping] A
-    WHERE T.zipcode=A.zipcode AND T.zipcode IN
-    (SELECT A2.zipcode FROM [dbo].[AddressMapping] AS A1, [dbo].[AddressMapping] AS A2
-    WHERE A1.zipcode= ".$zipcode." AND A2.city=A1.city AND A2.stateName=A1.stateName)";
+      $tsql1= SELECT DISTINCT T.aid, T.fname+' '+ T.lname AS Name, T.edlevel AS Qualification, T.gender AS Gender, T.wage AS Wage, R.rating AS Rating, A.city AS City, T.zipcode AS Zipcode
+FROM Tutors T, AddressMapping A, TutorSubjects TSub, Ratings R
+WHERE T.zipcode=A.zipcode AND R.aid=T.aid AND
+
+T.zipcode IN
+
+(SELECT A2.zipcode
+FROM AddressMapping A1, AddressMapping A2
+WHERE A1.zipcode= ".$zipcode." AND A2.city=A1.city AND A2.stateName=A1.stateName)
+
+AND
+
+(Tsub.aid = T.aid AND Tsub.subid >= 0 AND Tsub.subid <= 500)
+
+AND
+
+T.wage <= ".$wage."
+
+AND
+
+(T.gender='female' OR T.gender='male')
+
+AND
+
+R.rating >= ".$rating."";
       //$tsql1 = "SELECT TOP (10) * FROM [dbo].[Tutors]";
       //echo $tsql1;
       $getResults= sqlsrv_query($conn, $tsql1);
