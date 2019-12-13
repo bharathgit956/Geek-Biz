@@ -51,18 +51,7 @@ T.zipcode IN
 
 (SELECT A2.zipcode
 FROM AddressMapping A1, AddressMapping A2
-WHERE A1.zipcode= ".$zipcode." AND A2.city=A1.city AND A2.stateName=A1.stateName)
-
-AND
-
-(Tsub.aid = T.aid AND Tsub.subid >= 0 AND Tsub.subid <= 500)
-
-AND
-
-T.wage <= ".$wage." AND
-(T.gender='female' OR T.gender='male')
-AND
-R.rating >= ".$rating."";
+WHERE A1.zipcode= ".$zipcode." AND A2.city=A1.city AND A2.stateName=A1.stateName)";
 
       //$tsql1 = "SELECT TOP (10) * FROM [dbo].[Tutors]";
       //echo $tsql1;
