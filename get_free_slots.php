@@ -29,11 +29,11 @@ switch ($method) {
     	$result['numberOfEntries'] = 0;
       //echo $_GET["username"];
       $tsql1 = "SELECT TSlots.slotid, TSlots.weekid, TSlots.startTime
-      FROM FreeSlots F, TimeSlots TSlots
+      FROM [dbo].[FreeSlots] F, [dbo].[TimeSlots] TSlots
       WHERE F.aid= ".$tutid." AND F.slotid=TSlots.slotid AND
       F.slotid NOT IN
       (SELECT slotid
-      FROM Bookings B
+      FROM [dbo].[Bookings] B
       WHERE B.tutid=F.aid)";
       //$tsql1 = "SELECT TOP (10) * FROM [dbo].[Tutors]";
       //echo $tsql1;
