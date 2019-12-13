@@ -43,13 +43,10 @@ switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
       //echo $_GET["username"];
-      $tsql1= "SELECT DISTINCT T.aid, T.fname+' '+ T.lname AS Name, T.edlevel AS Qualification, T.gender AS Gender, T.wage AS Wage, R.rating AS Rating, A.city AS City, T.zipcode AS Zipcode
+      $tsql1= "SELECT DISTINCT T.aid, T.fname, T.lname, T.edlevel, T.gender, T.wage, R.rating, A.city, T.zipcode
 FROM Tutors T, AddressMapping A, TutorSubjects TSub, Ratings R
 WHERE T.zipcode=A.zipcode AND R.aid=T.aid AND
-
-T.zipcode IN
-
-(SELECT A2.zipcode
+T.zipcode IN (SELECT A2.zipcode
 FROM AddressMapping A1, AddressMapping A2
 WHERE A1.zipcode= ".$zipcode." AND A2.city=A1.city AND A2.stateName=A1.stateName)";
 
