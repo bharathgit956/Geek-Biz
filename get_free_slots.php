@@ -61,7 +61,7 @@ switch ($method) {
           }
             $temp = array(
                 "slotid" =>$slotid,
-                "weekid" =>$weekid.
+                "weekid" =>$weekid,
                 "startTime" => $startTime
             );
             array_push($result["user"], $temp);
