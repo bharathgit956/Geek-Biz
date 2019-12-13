@@ -30,7 +30,7 @@ switch ($method) {
     case 'GET':
     	$result['numberOfEntries'] = 0;
       //echo $_GET["username"];
-      $tsql1 = "DELETE FROM [dbo][Bookings]
+      $tsql1 = "DELETE FROM [dbo].[Bookings]
       WHERE tutid= ".$tutid." AND slotid= ".$slotid."";
       //$tsql1 = "SELECT TOP (10) * FROM [dbo].[Tutors]";
       //echo $tsql1;
