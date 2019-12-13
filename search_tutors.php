@@ -21,16 +21,22 @@ $gender1 = "'male'";
 $gender2 = "'female'";
 $wage = "1000";
 try {
+  if ($_GET["gender1"] != null) {
   $gender1 = $_GET["gender1"];
+}
 } catch (Error $e) { // this will catch only Errors
 }
 
 try {
+  if ($_GET["gender2"] != null) {
   $gender2 = $_GET["gender2"];
+}
 } catch (Error $e) { // this will catch only Errors
 }
 try {
+  if ($_GET["wage"] != null) {
   $wage= $_GET["wage"];
+}
 } catch (Error $e) { // this will catch only Errors
 }
 
