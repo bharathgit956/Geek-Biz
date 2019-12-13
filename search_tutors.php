@@ -17,7 +17,7 @@ $input = json_decode(file_get_contents('php://input'),true);
 $result = array();
 $zipcode = $_GET["zip"];
 $rating = 0;
-$gender1 = = "male";
+$gender1 = "male";
 $gender2 = 'female';
 try {
   $rating = $_GET["rating"];
